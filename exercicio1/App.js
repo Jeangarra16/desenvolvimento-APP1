@@ -10,7 +10,7 @@ import{
 }from 'react-native';
 import{Ionicons} from "@expo/vector-icons";
 
-class app1 extends Comment{
+class exercicio1 extends Comment{
   reader(){
     return(
       <SafeAreaView style = {style.conteiner}>
