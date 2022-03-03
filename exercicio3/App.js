@@ -1,112 +1,94 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
+import React, { Component }  from "react";
+import{
   View,
-} from 'react-native';
+  Text,
+  StyleSheet,
+  TextImput,
+  SafeAreaView,
+  StatusBar,
+  TouchableOpacity,
+  Image,
+}from 'react-native';
+import{Ionicons} from "@expo/vector-icons";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+class app1 extends Component{
+  reader(){
+    return(
+      <SafeAreaView style = {style.conteiner}>
+  
+        <StatusBar backgroundColor ='171d31' barStyle='light-content'>
+          
+          <View style ={Style.content} >
+  
+            <Text style = {style.Text}>tarefas</Text>
+          
+          </View>
+          <View>
+            <image Style = {Style.image}>
+              source ={require('./assets/-camera-image_.jpg')}
+            </image>
+            
+          </View>
+          <View>
+            <image Style = {Style.image}>
+              source ={require('./assets/Beb-Crian-a-Fam-lia-Casamento-Grama-Terra-de-Sol-o-C-u-Azul-Verde-Gramado.jpg_Q90.jpg_.webp')}
+            </image>
+            
+          </View>
+          
+          
+  
+  
+          <TouchableOpacity style = {style.fab}>
+  
+            <Ionicons name='ios-add' size ='{35}'color ='#fff'/>
+          
+          </TouchableOpacity>
+  
+        </StatusBar>
+  
+      </SafeAreaView>
+    )
+  }
+  const = Style = StyleSheet.create({
+    conteiner:{
+      flex:1,
+      backgroundColor: '#171d31'
+    },
+    title:{
+      marginTop:10,
+      paddingBottom:10,
+      fontSize: 25,
+      textAlign:'center',
+      color:'#fff'
+    },
+    fab:{
+      position:"absolute",
+      width: 60,
+      height: 60,
+      backgroundColor:'#0094FF',
+      alignItems: 'center',
+      justifyContent:'center',
+      borderRadius:30,
+      right:25,
+      bottom:25,
+      elevation:2,
+      zIndex:9,
+      shadowColor:'#000',
+      shadowOpacity:0.2,
+      shadowOffset:{
+        width: 1,
+        height: 3,
+      }
+    },
+    image:{
+      flex: 1,
+      alignItems:'center',
+      justifyContent:'center',
+      width:12,
+      height:12,
+     }  
+ })
+}
+ 
+export default app1;
